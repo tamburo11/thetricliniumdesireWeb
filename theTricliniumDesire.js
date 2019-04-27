@@ -209,6 +209,13 @@
      
     }
 
+function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    console.log("audio context resumed");
+    getAudioContext().resume();
+  }
+}
+
 
   
 
