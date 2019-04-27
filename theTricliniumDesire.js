@@ -21,6 +21,7 @@
     let statoV1vsV3=false;
     let statoV4vsV3=false;
     let counter;
+    let onOf;
 
     function preload(){
       soundFormats('mp3');
@@ -40,8 +41,11 @@
       div1.appendChild(t1);
       let t2=document.createTextNode("Alberto Barberis");
       div2.appendChild(t2);
+      let t3=document.createTextNode("press to start or stop audio");
+      div3.appendChild(t3);
       document.body.appendChild(div1);
       document.body.appendChild(div2);
+      document.body.appendChild(div3);
     }
 
     function setup(){
@@ -49,6 +53,7 @@
       masterVolume(0.); // impongo il volume a zero
       song.loop(); // la traccia va in loop
       song.disconnect(); // disconnetto la traccia dal master out per poter passare solo dagli effetti;
+      onOf = false;
 
       filterLP = new p5.BandPass();  // creo un'istanza di un filtro passa basso
       filterBP = new p5.BandPass();  // creo un'istanza di un filtro passa banda
@@ -67,7 +72,7 @@
       delay.process(song, delayTime, 0.2, delayFreq); // dati di setup del delay
 
       creaDiv(); // chiamo la funzione che crea i div che mi servono
-      masterVolume(1.0, 10, 0); // fade in del master volume
+      
     }
 
     // funzione draw
@@ -201,21 +206,28 @@
       line(width*0.33,yVolume1,width*0.99,yVolume3);
       line(width*0.66,yVolume4,width*0.99,yVolume3);
 
-     
-        if(getAudioContext().state !== 'running'){
-          console.log("audio context resumed");
-          getAudioContext().resume();
-        }
-     
+      // if(counter==10){
+      //   
+      // }
     }
 
-function touchStarted() {
-  if (getAudioContext().state !== 'running') {
-    console.log("audio context resumed");
-    getAudioContext().resume();
-  }
+function mouseMoved(){
+  if(getAudioContext().state !== 'running'){
+        console.log("audio context resumed");
+        getAudioContext().resume();
+      }
 }
 
-
+function mousePressed(){
+  if(onOf){
+    getAudioContext().resume();
+    masterVolume(0.,0.1,0); // fade in del master volume
+    onOf=false;
+  } else {
+    getAudioContext().resume();
+    masterVolume(1.0, 5, 0); // fade in del master volume
+    onOf=true;
+  }
+}
   
 
