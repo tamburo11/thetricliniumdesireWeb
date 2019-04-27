@@ -20,6 +20,7 @@
     let delayFreq=0;
     let statoV1vsV3=false;
     let statoV4vsV3=false;
+    let counter;
 
     function preload(){
       soundFormats('mp3');
@@ -71,6 +72,7 @@
 
     // funzione draw
     function draw(){
+      counter=frameCount;
       background(255); // colore di background
 
       /* ======================
@@ -198,11 +200,15 @@
       strokeWeight(0.3);
       line(width*0.33,yVolume1,width*0.99,yVolume3);
       line(width*0.66,yVolume4,width*0.99,yVolume3);
-    }
 
-    function touchStarted(){
-      if(getAudioContext().state !== 'running'){
-        console.log("audio context resumed");
-        getAudioContext().resume();
+      if(counter==10){
+        if(getAudioContext().state !== 'running'){
+          console.log("audio context resumed");
+          getAudioContext().resume();
+        }
       }
     }
+
+
+  
+
