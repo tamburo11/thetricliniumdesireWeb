@@ -182,7 +182,6 @@
         actualStatoV4vsV3=true; 
       }
       if(actualStatoV4vsV3!=statoV4vsV3){
-        console.log("cambio stato");
          delayTime=0.5;
          delayFreq=8000;
         statoV4vsV3=actualStatoV4vsV3;
@@ -199,4 +198,11 @@
       strokeWeight(0.3);
       line(width*0.33,yVolume1,width*0.99,yVolume3);
       line(width*0.66,yVolume4,width*0.99,yVolume3);
+    }
+
+    function touchStarted(){
+      if(getAudioContext().state !== 'running'){
+        console.log("audio context resumed");
+        getAudioContext().resume();
+      }
     }
