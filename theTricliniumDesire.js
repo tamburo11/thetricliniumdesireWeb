@@ -201,7 +201,7 @@
       line(width*0.33,yVolume1,width*0.99,yVolume3);
       line(width*0.66,yVolume4,width*0.99,yVolume3);
 
-      if(counter==10){
+      if(counter==100){
         if(getAudioContext().state !== 'running'){
           console.log("audio context resumed");
           getAudioContext().resume();
