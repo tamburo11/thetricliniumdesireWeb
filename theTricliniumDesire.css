@@ -14,25 +14,25 @@
 
   #div2{
     font-family: "Montserrat"; 
-    font-size: 1em; 
+    font-size: 0.8em; 
     letter-spacing: 7px;
     background-color: rgba(0,0,0,0.01); 
     color:  rgba(0,0,0,0.5);
     position:absolute; 
     width: 100%; 
-    top: 90%; 
+    top: 2%; 
     text-align: center;
   }
 
 
   #div3{
     font-family: "Montserrat"; 
-    font-size: 0.7em; 
+    font-size: 0.8em; 
     letter-spacing: 7px;
     background-color: rgba(0,0,0,0.01); 
     color:  rgba(0,0,0,0.5);
     position:absolute; 
     width: 100%; 
-    top: 60%; 
+    top: 95%; 
     text-align: center;
   }
