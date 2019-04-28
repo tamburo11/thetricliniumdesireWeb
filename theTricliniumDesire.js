@@ -84,7 +84,7 @@
       WHITE NOISE DI BACKGROUND
       ====================== */
         
-      stroke("rgba(0,0,0,0.25)"); // colore del white noise
+      stroke("rgba(0,0,0,0.2)"); // colore del white noise
       strokeWeight(0.5); // spessore del white noise
   
       if(vs2.length>width*0.99) vs2.splice(0,1); // sposto di una posizione i dati nella matrice se ho raggiunto il bordo
@@ -100,7 +100,7 @@
       LINEA 1 - controllo sul volume
       ============================= */
         
-      stroke("rgba(0,0,255,0.35)"); // cambio il colore per la prima linea blu, quella più chiara
+      stroke("rgba(0,0,255,0.2)"); // cambio il colore per la prima linea blu, quella più chiara
       strokeWeight(3); // spessore linee blu
       if(vs1.length>width*0.33) vs1.splice(0,1);
       
@@ -119,7 +119,7 @@
       LINEA 4 - controllo sui filtri
       ============================= */
 
-      stroke("rgba(0,0,255,0.35)");
+      stroke("rgba(0,0,255,0.2)");
       if(vs4.length>width*0.66)
         vs4.splice(0,1);
       let n4 = frameCount*0.0015;
@@ -136,7 +136,7 @@
       LINEA 3 - controllo sulla velocità di lettura del file
       ===================================================== */
 
-      stroke("rgba(0,0,255,0.35)"); 
+      stroke("rgba(0,0,255,0.2)"); 
       if(vs3.length>width*0.99)
         vs3.splice(0,1);
       let n3 = frameCount*0.00015; // variazione minore tra tutte e 3 le linee
