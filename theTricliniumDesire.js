@@ -100,7 +100,7 @@
       LINEA 1 - controllo sul volume
       ============================= */
         
-      stroke("rgba(0,0,255,0.15)"); // cambio il colore per la prima linea blu, quella più chiara
+      stroke("rgba(0,0,255,0.35)"); // cambio il colore per la prima linea blu, quella più chiara
       strokeWeight(3); // spessore linee blu
       if(vs1.length>width*0.33) vs1.splice(0,1);
       
@@ -119,7 +119,7 @@
       LINEA 4 - controllo sui filtri
       ============================= */
 
-      stroke("rgba(0,0,255,0.15)");
+      stroke("rgba(0,0,255,0.35)");
       if(vs4.length>width*0.66)
         vs4.splice(0,1);
       let n4 = frameCount*0.0015;
